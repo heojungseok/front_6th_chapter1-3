@@ -21,7 +21,7 @@ export const deepEquals = (a: unknown, b: unknown) => {
   const objB = b as Record<string, unknown>;
 
   for (const key of aKeys) {
-    // b 가 key 를 가지고 있지 않거나, a와 b의 값이 다르다는 조건
+    // 깊은 비교를 위하여 재귀 호출
     if (!Object.hasOwn(b, key) || !deepEquals(objA[key], objB[key])) {
       return false;
     }
