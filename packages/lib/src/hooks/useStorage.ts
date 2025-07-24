@@ -12,8 +12,5 @@ export const useStorage = <T>(storage: Storage<T>) => {
   const getSnapShot = () => {
     return storage.get();
   };
-
-  const value = useSyncExternalStore(subscribe, getSnapShot, null);
-
-  return value;
+  return useSyncExternalStore(subscribe, getSnapShot, null);
 };
